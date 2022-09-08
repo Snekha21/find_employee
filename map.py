@@ -60,7 +60,7 @@ map=folium.Map(location=[df['LAT'].mean(),df['LON'].mean()],zoom_start=6,tiles="
 #  return col
 fg=folium.FeatureGroup(name="EMPLOYEE LOCATIONS")
 for lat,lon,name,time in zip(df['LAT'],df['LON'],df['NAME'],df['TIME']):
- fg.add_child(folium.Marker(location=[lat,lon],popup=(folium.Popup(name)),icon=folium.Icon(color='red',icon_color='green')))
+ fg.add_child(folium.Marker(location=[lat,lon],popup=(folium.Popup(name,time)),icon=folium.Icon(color='red',icon_color='green')))
 map.add_child(fg)
 # map.add_child(folium.GeoJson(data=open('datas.json')
 # name="Population"
